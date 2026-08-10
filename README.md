@@ -118,7 +118,7 @@ Put the exe next to your config and game data, for example:
 
 ```text
 MyEvent/
-  rocket 0.1.1.exe
+  rocket 0.2.0.exe
   event.rocket
   Lacuna/
     game.exe          ← (or .bat that starts the real game)
