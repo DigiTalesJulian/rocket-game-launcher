@@ -90,7 +90,7 @@ Example (see `Rocket/example/example.rocket`):
     "projects": [
         {
             "description": "Short blurb for the player.",
-            "executable": "~\\Lacuna\\game.exe"
+            "executable": "~/Lacuna/game.exe"
         }
     ]
 }
@@ -139,7 +139,7 @@ In `event.rocket`, list every game with `description` + `executable`.
 `~` means “the folder that contains this `.rocket` file”:
 
 ```text
-"executable": "~\\Lacuna\\game.exe"
+"executable": "~/Lacuna/game.exe"
 ```
 
 ### 4. On the venue PC

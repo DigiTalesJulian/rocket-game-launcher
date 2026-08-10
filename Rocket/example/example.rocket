@@ -2,19 +2,19 @@
     "projects": [
         {
             "description": "A modern, dialog-driven pixel art detective adventure set in a sci-fi noir universe. Make difficult decision that impact an increasingly branching story.",
-            "executable": "~\\Lacuna\\Lacuna.bat"
+            "executable": "~/Lacuna/Lacuna.bat"
         },
         {
             "description": "An enthralling 2.5D detective adventure set on a generation ship en route to another star. Solve non-linear cases in a semi-open world.",
-            "executable": "~\\BetweenHorizons\\BetweenHorizons.bat"
+            "executable": "~/BetweenHorizons/BetweenHorizons.bat"
         },
         {
             "description": "A new-gen detective adventure combining deduction gameplay with a gripping story full of twists and turns, set in a gorgeous post-apocalyptic pixel art universe.",
-            "executable": "~\\FromRuins\\FromRuins.bat"
+            "executable": "~/FromRuins/FromRuins.bat"
         },
         {
             "description": "A beautifully illustrated, text-based narrative adventure about a travelling circus in WWI Europe. Manage resources, recruit performers, and find a safe haven to last out the storm.",
-            "executable": "~\\Sassanelli\\Sassanelli.bat"
+            "executable": "~/Sassanelli/Sassanelli.bat"
         }
     ]
 }
