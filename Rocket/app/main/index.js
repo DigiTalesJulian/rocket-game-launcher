@@ -130,12 +130,13 @@ app.on('ready', () => {
 
     if (content.projects.length > 0) {
       content.projects = content.projects.map((project) => {
-        project.banner = resolveRelativeRocketPath(project.banner);
-        if (fs.existsSync(project.banner)) {
-          project.banner = loadImage(project.banner)
+        const gameDir = path.dirname(resolveRelativeRocketPath(project.executable));
+
+        const bannerPath = path.join(gameDir, 'banner.png');
+        if (fs.existsSync(bannerPath)) {
+          project.banner = loadImage(bannerPath);
         }
 
-        const gameDir = path.dirname(resolveRelativeRocketPath(project.executable));
         const logoPath = path.join(gameDir, 'logo.png');
         if (fs.existsSync(logoPath)) {
           project.logo = loadImage(logoPath);
