@@ -174,14 +174,26 @@ export default class RocketProjects extends React.Component {
 			const media = project.isvideo ? (
 				<div className="videocontainer">
 					<div className="overlay"></div>
-					<video playsInline={true} autoPlay={true} muted loop>
+					<video
+						playsInline={true}
+						autoPlay={true}
+						muted
+						loop
+						onMouseMove={() => this._selectWithMouse(index)}
+						onClick={() => this._launchProject(project)}
+					>
 						<source src={project.banner} type="video/webm" />
 					</video>
 				</div>
 			) : (
-				<div className="imagecontainer" >
+				<div className="imagecontainer">
 					<div className="overlay"></div>
-					<img src={project.banner} alt="" />
+					<img
+						src={project.banner}
+						alt=""
+						onMouseMove={() => this._selectWithMouse(index)}
+						onClick={() => this._launchProject(project)}
+					/>
 				</div>
 			);
 
@@ -189,8 +201,6 @@ export default class RocketProjects extends React.Component {
 				<li
 					key={project.description}
 					className={index === selectedIndex ? "selected" : undefined}
-					onMouseMove={() => this._selectWithMouse(index)}
-					onClick={() => this._launchProject(project)}
 					style={styles}
 				>
 					<div className="logocontainer">
