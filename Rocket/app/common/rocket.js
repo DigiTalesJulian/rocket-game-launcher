@@ -3,7 +3,7 @@
 /**
  * @typedef {Object} RocketProject
  * @property {string} description
- * @property {string} executeable
+ * @property {string} executable
  * @property {string} banner
  * @property {string} [logo] Loaded automatically from logo.png next to the executable
  * 

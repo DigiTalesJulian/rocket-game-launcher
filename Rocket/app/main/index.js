@@ -89,10 +89,10 @@ app.on('ready', () => {
     (event, launchedRocket) => {
       if (!AppIsRunning) {
         AppIsRunning = true
-        const executeablePath = resolveRelativeRocketPath(launchedRocket.executeable);
-        if (fs.existsSync(executeablePath)) {
-          console.log(`Launching rocket ${launchedRocket.description} via ${executeablePath} (${launchedRocket.executeable})`);
-          spawn(executeablePath).on("close", () => {
+        const executablePath = resolveRelativeRocketPath(launchedRocket.executable);
+        if (fs.existsSync(executablePath)) {
+          console.log(`Launching rocket ${launchedRocket.description} via ${executablePath} (${launchedRocket.executable})`);
+          spawn(executablePath).on("close", () => {
       console.log("here")
 
             AppIsRunning = false;
@@ -135,7 +135,7 @@ app.on('ready', () => {
           project.banner = loadImage(project.banner)
         }
 
-        const gameDir = path.dirname(resolveRelativeRocketPath(project.executeable));
+        const gameDir = path.dirname(resolveRelativeRocketPath(project.executable));
         const logoPath = path.join(gameDir, 'logo.png');
         if (fs.existsSync(logoPath)) {
           project.logo = loadImage(logoPath);
