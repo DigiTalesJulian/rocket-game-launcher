@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node --openssl-legacy-provider ./scripts/dev.js",
-    "compile": "electron-webpack",
+    "compile": "node --openssl-legacy-provider ./node_modules/electron-webpack/out/cli.js",
     "dist": "yarn compile && electron-builder --win portable",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
