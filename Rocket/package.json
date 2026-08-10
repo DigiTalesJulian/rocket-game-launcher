@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "license": "MIT",
   "scripts": {
-    "dev": "electron-webpack dev",
+    "dev": "node --openssl-legacy-provider ./scripts/dev.js",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder --win portable",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"

@@ -1,1 +1,0 @@
-msg /W "%username%" "RGL> PepaFatal would start"

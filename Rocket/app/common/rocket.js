@@ -2,7 +2,7 @@
 
 /**
  * @typedef {Object} RocketProject
- * @property {string} title
+ * @property {string} description
  * @property {string} executeable
  * @property {string} banner
  * 

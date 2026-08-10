@@ -1,20 +1,24 @@
 {
     "projects": [
         {
-            "title": "PepaFatal",
-            "executeable": "~\\PepaFatal\\PepaFatal.bat",
-            "banner": "~\\PepaFatal\\logo.png"
+            "description": "A murder. A hack. A bombing. All it takes to plunge the solar system into war – unless you do something about it. Help CDI agent Neil Conrad make a string of increasingly difficult decisions in this modern dialog-driven adventure set in a gorgeous 2D sci-fi noir universe.",
+            "executeable": "~\\Lacuna\\Lacuna.bat",
+            "banner": "~\\Lacuna\\Lacuna_Banner_gds-launcher-ctas.png"
         },
         {
-            "title": "CubeLink",
-            "executeable": "~\\CubeLink\\Kugelkoenig.bat",
-            "banner": "~\\CubeLink\\logo.gif"
+            "description": "Between Horizons is a narrative 2.5D sci-fi detective adventure. 33 years into the Zephyr's journey, its mission is suddenly jeopardized. Can you find the culprit before it's too late? Experience an enthralling story set in a semi-open world that branches and ends based on your choices.",
+            "executeable": "~\\BetweenHorizons\\BetweenHorizons.bat",
+            "banner": "~\\BetweenHorizons\\BH_Banner_gds-launcher-ctas.png"
         },
         {
-            "title": "RebeatIt!",
-            "executeable": "~\\RebeatIt\\RebeatIt.bat",
-            "banner": "~\\RebeatIt\\logowebm.webm",
-            "isvideo": true
+            "description": "A new-gen detective adventure combining deduction gameplay with a gripping story full of twists and turns. Gather clues, establish connections, and solve a series of increasingly challenging cases. Will you uncover the feud that began at the end of the world?",
+            "executeable": "~\\FromRuins\\FromRuins.bat",
+            "banner": "~\\FromRuins\\FR_Banner_gds-launcher-ctas.png"
+        },
+        {
+            "description": "A war of unseen ferocity is ravaging the continent. You, ringmaster dilettante, must keep the circus afloat. Travel, entertain, and keep the troupe’s spirits up while trying to find a mythical safe haven to last out the storm in this beautifully illustrated, text-based narrative adventure.",
+            "executeable": "~\\Sassanelli\\Sassanelli.bat",
+            "banner": "~\\Sassanelli\\Sass_Banner_Launcher.png"
         }
     ]
 }

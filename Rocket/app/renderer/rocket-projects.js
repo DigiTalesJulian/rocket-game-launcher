@@ -9,7 +9,7 @@ export default class RocketProjects extends React.Component {
 		super(props);
 
 		/**
-		 * @type {RocketProjects[]}
+		 * @type {RocketProject[]}
 		 */
 		this.projects = props.Projects;
 	}
@@ -33,29 +33,26 @@ export default class RocketProjects extends React.Component {
 				width: `${numProjects * 100}%`,
 
 			};
-			if (project.isvideo) {
-				return (<li key={project.title} onClick={this._onfocus.bind(project)} style={styles} >
-					<div className="videocontainer">
-						<div className="overlay"></div>
-						<video playsInline={true} autoPlay={true} muted loop>
-							<source src={project.banner} type="video/webm" />
-						</video>
-
-					</div>
-				</li>);
-			}
-			else {
-				let innerStyle = {
-					'background': `url(${project.banner}) no-repeat center`,
-					'backgroundSize': 'auto'
-				}
-				return (<li key={project.title} onClick={this._onfocus.bind(project)} style={styles} >
-					<div className="imagecontainer" >
+			const media = project.isvideo ? (
+				<div className="videocontainer">
 					<div className="overlay"></div>
-						<img src={project.banner} alt="" />
-					</div>
-				</li>);
-			}
+					<video playsInline={true} autoPlay={true} muted loop>
+						<source src={project.banner} type="video/webm" />
+					</video>
+				</div>
+			) : (
+				<div className="imagecontainer" >
+					<div className="overlay"></div>
+					<img src={project.banner} alt="" />
+				</div>
+			);
+
+			return (
+				<li key={project.description} onClick={this._onfocus.bind(project)} style={styles} >
+					{media}
+					<p className="description">{project.description}</p>
+				</li>
+			);
 		});
 
 		return (<ul className="project-list">

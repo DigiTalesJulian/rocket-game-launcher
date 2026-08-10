@@ -1,0 +1,1 @@
+msg /W "%username%" "RGL > From Ruins would start"

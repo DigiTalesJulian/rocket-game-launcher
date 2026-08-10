@@ -91,7 +91,7 @@ app.on('ready', () => {
         AppIsRunning = true
         const executeablePath = resolveRelativeRocketPath(launchedRocket.executeable);
         if (fs.existsSync(executeablePath)) {
-          console.log(`Launching rocket ${launchedRocket.title} via ${executeablePath} (${launchedRocket.executeable})`);
+          console.log(`Launching rocket ${launchedRocket.description} via ${executeablePath} (${launchedRocket.executeable})`);
           spawn(executeablePath).on("close", () => {
       console.log("here")
 
