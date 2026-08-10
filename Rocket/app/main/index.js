@@ -123,18 +123,22 @@ app.on('ready', () => {
     /** @type RocketFile */
     const content = JSON.parse(fs.readFileSync(rocketFile));
 
-    const loadBanner = (path) => {
-      const _binaryImage = fs.readFileSync(path).toString('base64');
+    const loadImage = (imagePath) => {
+      const _binaryImage = fs.readFileSync(imagePath).toString('base64');
       return `data:image/png;base64,${_binaryImage}`;
     };
-
-    
 
     if (content.projects.length > 0) {
       content.projects = content.projects.map((project) => {
         project.banner = resolveRelativeRocketPath(project.banner);
         if (fs.existsSync(project.banner)) {
-          project.banner = loadBanner(project.banner)
+          project.banner = loadImage(project.banner)
+        }
+
+        const gameDir = path.dirname(resolveRelativeRocketPath(project.executeable));
+        const logoPath = path.join(gameDir, 'logo.png');
+        if (fs.existsSync(logoPath)) {
+          project.logo = loadImage(logoPath);
         }
 
         return project;

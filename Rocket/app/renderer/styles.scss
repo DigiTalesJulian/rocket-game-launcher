@@ -48,7 +48,7 @@ body {
         position: relative;
         display: flex;
         flex-direction: column;
-        padding-top: 10%;
+        padding-top: 3%;
         padding-bottom: 2%;
         box-sizing: border-box;
         box-shadow: inset 0 0 1em 1em #000;
@@ -67,9 +67,26 @@ body {
         transition: 0.5s ease-in-out;
         &:hover {
             filter: grayscale(0%);
-            & img {
-                object-fit: none;
+        }
+
+        .logocontainer {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-height: 18%;
+            margin-bottom: 1rem;
+            padding: 0 1.5rem;
+            box-sizing: border-box;
+
+            .studio-logo {
+                max-width: 100%;
+                max-height: 120px;
                 width: auto;
+                height: auto;
+                object-fit: contain;
+                user-select: none;
             }
         }
 

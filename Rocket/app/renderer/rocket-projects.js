@@ -49,6 +49,11 @@ export default class RocketProjects extends React.Component {
 
 			return (
 				<li key={project.description} onClick={this._onfocus.bind(project)} style={styles} >
+					{project.logo && (
+						<div className="logocontainer">
+							<img className="studio-logo" src={project.logo} alt="" />
+						</div>
+					)}
 					{media}
 					<p className="description">{project.description}</p>
 				</li>
