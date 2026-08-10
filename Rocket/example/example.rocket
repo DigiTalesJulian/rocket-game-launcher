@@ -1,22 +1,22 @@
 {
     "projects": [
         {
-            "description": "A murder. A hack. A bombing. All it takes to plunge the solar system into war – unless you do something about it. Help CDI agent Neil Conrad make a string of increasingly difficult decisions in this modern dialog-driven adventure set in a gorgeous 2D sci-fi noir universe.",
+            "description": "A modern, dialog-driven pixel art detective adventure set in a sci-fi noir universe. Make difficult decision that impact an increasingly branching story.",
             "executeable": "~\\Lacuna\\Lacuna.bat",
             "banner": "~\\Lacuna\\Lacuna_Banner_gds-launcher-ctas.png"
         },
         {
-            "description": "Between Horizons is a narrative 2.5D sci-fi detective adventure. 33 years into the Zephyr's journey, its mission is suddenly jeopardized. Can you find the culprit before it's too late? Experience an enthralling story set in a semi-open world that branches and ends based on your choices.",
+            "description": "An enthralling 2.5D detective adventure set on a generation ship en route to another star. Solve non-linear cases in a semi-open world.",
             "executeable": "~\\BetweenHorizons\\BetweenHorizons.bat",
             "banner": "~\\BetweenHorizons\\BH_Banner_gds-launcher-ctas.png"
         },
         {
-            "description": "A new-gen detective adventure combining deduction gameplay with a gripping story full of twists and turns. Gather clues, establish connections, and solve a series of increasingly challenging cases. Will you uncover the feud that began at the end of the world?",
+            "description": "A new-gen detective adventure combining deduction gameplay with a gripping story full of twists and turns, set in a gorgeous post-apocalyptic pixel art universe.",
             "executeable": "~\\FromRuins\\FromRuins.bat",
             "banner": "~\\FromRuins\\FR_Banner_gds-launcher-ctas.png"
         },
         {
-            "description": "A war of unseen ferocity is ravaging the continent. You, ringmaster dilettante, must keep the circus afloat. Travel, entertain, and keep the troupe’s spirits up while trying to find a mythical safe haven to last out the storm in this beautifully illustrated, text-based narrative adventure.",
+            "description": "A beautifully illustrated, text-based narrative adventure about a travelling circus in WWI Europe. Manage resources, recruit performers, and find a safe haven to last out the storm.",
             "executeable": "~\\Sassanelli\\Sassanelli.bat",
             "banner": "~\\Sassanelli\\Sass_Banner_Launcher.png"
         }
