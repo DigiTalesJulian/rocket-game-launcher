@@ -8,6 +8,8 @@ const STICK_DEADZONE = 0.5;
 const BUTTON_A = 0;
 const BUTTON_DPAD_LEFT = 14;
 const BUTTON_DPAD_RIGHT = 15;
+const DESCRIPTION_MAX_FONT_PX = 20;
+const DESCRIPTION_MIN_FONT_PX = 10;
 
 export default class RocketProjects extends React.Component {
 	constructor(props) {
@@ -22,11 +24,20 @@ export default class RocketProjects extends React.Component {
 		this._rafId = null;
 		this._navHeld = false;
 		this._launchHeld = false;
+		/** @type {HTMLElement[]} */
+		this._descriptionEls = [];
 		this._pollGamepads = this._pollGamepads.bind(this);
+		this._fitAllDescriptions = this._fitAllDescriptions.bind(this);
 	}
 
 	componentDidMount() {
 		this._rafId = requestAnimationFrame(this._pollGamepads);
+		window.addEventListener('resize', this._fitAllDescriptions);
+		this._fitAllDescriptions();
+	}
+
+	componentDidUpdate() {
+		this._fitAllDescriptions();
 	}
 
 	componentWillUnmount() {
@@ -34,6 +45,42 @@ export default class RocketProjects extends React.Component {
 			cancelAnimationFrame(this._rafId);
 			this._rafId = null;
 		}
+		window.removeEventListener('resize', this._fitAllDescriptions);
+	}
+
+	_fitDescription(el) {
+		const area = el && el.parentElement;
+		if (!el || !area) {
+			return;
+		}
+
+		let low = DESCRIPTION_MIN_FONT_PX;
+		let high = DESCRIPTION_MAX_FONT_PX;
+		let best = low;
+
+		el.style.fontSize = `${high}px`;
+		if (el.scrollHeight <= area.clientHeight && el.scrollWidth <= area.clientWidth) {
+			return;
+		}
+
+		while (low <= high) {
+			const mid = (low + high) / 2;
+			el.style.fontSize = `${mid}px`;
+			if (el.scrollHeight <= area.clientHeight && el.scrollWidth <= area.clientWidth) {
+				best = mid;
+				low = mid + 0.25;
+			} else {
+				high = mid - 0.25;
+			}
+		}
+
+		el.style.fontSize = `${best}px`;
+	}
+
+	_fitAllDescriptions() {
+		requestAnimationFrame(() => {
+			this._descriptionEls.forEach((el) => this._fitDescription(el));
+		});
 	}
 
 	_launchProject(project) {
@@ -118,6 +165,7 @@ export default class RocketProjects extends React.Component {
 	render() {
 		const numProjects = 1.0 / (Math.max(1, this.projects.length));
 		const { selectedIndex } = this.state;
+		this._descriptionEls = [];
 
 		const ProjectList = this.projects.map((project, index) => {
 			const styles = {
@@ -145,13 +193,20 @@ export default class RocketProjects extends React.Component {
 					onClick={() => this._launchProject(project)}
 					style={styles}
 				>
-					{project.logo && (
-						<div className="logocontainer">
+					<div className="logocontainer">
+						{project.logo && (
 							<img className="studio-logo" src={project.logo} alt="" />
-						</div>
-					)}
+						)}
+					</div>
 					{media}
-					<p className="description">{project.description}</p>
+					<div className="description-area">
+						<p
+							className="description"
+							ref={(el) => { if (el) { this._descriptionEls.push(el); } }}
+						>
+							{project.description}
+						</p>
+					</div>
 				</li>
 			);
 		});
